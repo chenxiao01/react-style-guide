@@ -201,6 +201,28 @@
     />
 ```
 
+- **必须**在JSX的DOM片段中使用双引号（`"`）。所有一切其他JavaScript都使用单引号（`'`）。
+
+    > Why？JSX属性 [can't contain escaped quotes](http://eslint.org/docs/rules/jsx-quotes)。双引号使得类似`"don't"`的字符串更容易输入。
+
+    > 而且，HTML属性中应该使用双引号，JSX中的DOM片段维持这一规范。
+
+    ```javascript
+    // bad
+    <Foo bar='bar' />
+
+    // good
+    <Foo bar="bar" />
+
+    // bad
+    <Foo style={{ left: "20px" }} />
+
+    // good
+    <Foo style={{ left: '20px' }} />
+    ```
+
+- **必须**将所有的事件处理函数命名为`onXXX`。如`onSubmit`或者`onClick`。
+
 - **必须**以如下的顺序排列JSX文件中的方法。
   
   1. `displayName`
