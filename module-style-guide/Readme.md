@@ -105,6 +105,8 @@ MyModel.prototype['update list'] = function (list) {
     this.set('listData', list);
 };
 ```
+* 派发的动作中，“置为默认值”***可以（MAY）***命名为`update default`。
+* 派发的动作中，“置为空”***可以（MAY）***命名为`update empty`。
 * ***不建议(SHOULD NOT)***通过`Model`fire`change`事件的方式将数据变化告知`Action`，但当外层父模块为`er-MVC`模块，且子模块需要将数据变化通知到父模块时，***可选择(MAY)***在`Action`中侦听`Model`的`change`事件来将数据变化传递给外层模块，譬如：
 
 ```js

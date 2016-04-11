@@ -68,7 +68,7 @@
     export MyComponent;
 ```
 
-- **必须**只能使用`React.createClass()`来创建一个React Component。
+- **应该**使用`React.createClass()`来创建一个React Component。
 
     > 虽然ES6 Class和pure function都可以创建React Component，
     > 但ES6 Class不能使用mixin做扩展，与目前的扩展方法冲突；
