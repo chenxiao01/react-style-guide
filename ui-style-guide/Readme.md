@@ -277,6 +277,23 @@
     }
 ```
 
+- **应该**在声明为ES6 class的React Component中，在constructor中提前绑定需要作为回调的成员函数。
+
+```javascript
+    // good
+    class Counter extends React.Component {
+      constructor() {
+        super();
+        // onTick将作为回调在render()中使用，提前绑定
+        this.onTick = this.onTick.bind(this);
+      }
+      onTick() {
+        ...
+      }
+      ...
+    }
+```
+
 - **不建议**在运行期生命周期中使用时间复杂度O(n<sup>2</sup>)及以上阶的算法。
 - **必须不**允许出现观察者模式，如自定义`addEventListener`方法，或`on`, `fire`等。
 - **必须**只能通过以下2种方法设置组件内部状态：
